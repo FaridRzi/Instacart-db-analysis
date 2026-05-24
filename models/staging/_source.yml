@@ -1,0 +1,19 @@
+version: 2
+
+sources:
+  - name: instacart
+    database: instacard-db
+    schema: raw
+    tables:
+      - name: aisles
+        description: "Reference table for product aisles"
+      - name: departments
+        description: "Reference table for product departments"
+      - name: products
+        description: "Product catalog with names and category IDs"
+      - name: orders
+        description: "Order header table - one row per order"
+      - name: order_products__prior
+        description: "Order line items from prior orders (historical)"
+      - name: order_products__train
+        description: "Order line items from training set"
