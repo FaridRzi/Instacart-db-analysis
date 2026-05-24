@@ -50,7 +50,7 @@ There will be a flag to indicate whether the record is from the prior or train t
 Since there isn't a col where we can check if the data is unique or not, here we have used generate_surrogate_key from dbt_utils to generate the unique combination of orders and products.
 
 ## Project tree
-.
+```.
 ├── aisles.csv
 ├── departments.csv
 ├── instacart_analysis
@@ -68,7 +68,7 @@ Since there isn't a col where we can check if the data is unique or not, here we
 ├── order_products__train.csv
 ├── orders.csv
 └── products.csv
-
+```
 8 directories, 10 files
 
 
