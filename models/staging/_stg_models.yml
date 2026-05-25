@@ -11,8 +11,17 @@ models:
         description: "Name of the product"
       - name: aisle_id
         description: "Foreign key to the aisle the product belongs to"
+        data_tests:
+          - relationships:
+              to: ref('stg_instacart__aisles')
+              field: aisle_id
       - name: department_id
         description: "Foreign key to the department the product belongs to"
+        data_tests:
+          - not_null
+          - relationships:
+              to: ref('stg_instacart__departments')
+              field: department_id
   - name: stg_instacart__order_products
     description: "Staging model for order products data, combining prior and train datasets"
     columns:
@@ -25,10 +34,16 @@ models:
         description: "Unique identifier for each order"
         data_tests:
           - not_null
+          - relationships:
+              to: ref('stg_instacart__orders')
+              field: order_id
       - name: product_id
         description: "Unique identifier for each product in the order"
         data_tests:
           - not_null
+          - relationships:
+              to: ref('stg_instacart__products')
+              field: product_id
       - name: add_to_cart_order
         description: "The order in which the products were added to the cart"
       - name: reordered

@@ -33,9 +33,9 @@ Make sure you have the following ready to use
 1. Python, gcloud CLI, dbt-core, dbt-bigquery
 2. Using Kaggle data source, upload the data sources into BQ
 Try running the following commands:
-- dbt deps
-- dbt run
-- dbt test
+```dbt deps
+dbt run
+dbt test```
 
 ## advanced commands
 dbt run --select stg_instacart__orders — build one model
